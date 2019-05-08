@@ -11,6 +11,8 @@ public class MainActivity extends Activity {
     Button button2;
     Button button3;
 
+    private BackPressCloseHandler backPressCloseHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,7 @@ public class MainActivity extends Activity {
         button = (Button) findViewById(R.id.button);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
+        backPressCloseHandler = new BackPressCloseHandler(this);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +48,12 @@ public class MainActivity extends Activity {
                 button2.setBackgroundResource(R.drawable.buttonshape2);
             }
         });
+
+        @Override public void onBackPressed ()
+        {
+            backPressCloseHandler.onBackPressed();
+        }
+
 
     }
 }
