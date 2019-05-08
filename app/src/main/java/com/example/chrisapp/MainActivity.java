@@ -15,28 +15,34 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (Button)findViewById(R.id.button);
-        button2 = (Button)findViewById(R.id.button2);
-        button3 = (Button)findViewById(R.id.button3);
+        button = (Button) findViewById(R.id.button);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button.setText("버튼1");
+                button.setBackgroundResource(R.drawable.click1);
+                button2.setBackgroundResource(R.drawable.buttonshape2);
+                button3.setBackgroundResource(R.drawable.buttonshape3);
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button2.setText("버튼1");
+                button2.setBackgroundResource(R.drawable.click2);
+                button.setBackgroundResource(R.drawable.buttonshape);
+                button3.setBackgroundResource(R.drawable.buttonshape3);
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button3.setText("버튼1");
+                button3.setBackgroundResource(R.drawable.click3);
+                button.setBackgroundResource(R.drawable.buttonshape);
+                button2.setBackgroundResource(R.drawable.buttonshape2);
             }
         });
 
