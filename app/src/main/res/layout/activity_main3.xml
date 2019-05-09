@@ -24,7 +24,7 @@
                 android:id="@+id/button"
                 android:layout_width="95dp"
                 android:layout_height="28dp"
-                android:background="@drawable/click1"
+                android:background="@drawable/buttonshape"
                 android:text="감성명함"
                 app:layout_constraintEnd_toStartOf="@+id/button2"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -41,7 +41,7 @@
                 android:id="@+id/button3"
                 android:layout_width="95dp"
                 android:layout_height="28dp"
-                android:background="@drawable/buttonshape3"
+                android:background="@drawable/click3"
                 android:text="디자인쿠폰"
                 app:layout_constraintStart_toEndOf="@+id/button2" />
 
