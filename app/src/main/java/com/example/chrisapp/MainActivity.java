@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends Activity {
 
     //    리스트뷰에 표시할 값
@@ -35,6 +38,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //문자열 데이터를 저장하는데 사용할 ArrayList 객체 생성
+        List<String[]> list = new ArrayList<>();
+
+        list.add(new String[]{"facebook", "페북 카드"});
+        list.add(new String[]{"", ""});
 
         //리스트뷰에 연결하기 위한 어댑터 생성자
         //ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, LIST_MENU);
