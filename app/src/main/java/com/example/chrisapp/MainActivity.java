@@ -6,20 +6,83 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
+
+    //    리스트뷰에 표시할 값
+    public String[] LIST_MENU = {
+            "LIST1", "LIST2", "LIST3", "LIST4", "LIST5",
+            "LIST6", "LIST7", "LIST8", "LIST9", "LIST10",
+            "LIST11", "LIST12", "LIST13", "LIST14", "LIST15",
+    };
+
 
     Button button;
     Button button2;
     Button button3;
 
-//    private BackPressCloseHandler backPressCloseHandler;
+    //뷰 생성 및 출력
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        //activity_main.xml을 화면에 표시해 준다.
+        setContentView(R.layout.activity_main);
+
+        //문자열 데이터를 저장하는데 사용할 ArrayList 객체 생성
+
+        //리스트뷰에 연결하기 위한 어댑터 생성자
+        //ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, LIST_MENU);
+        ArrayAdapter adapter = new ImageAdapter(this, LIST_MENU);
+        //리스트뷰 id를 찾아 리스트뷰 객체 만들어서 어댑터를 할당한다.
+        ListView listview = (ListView) findViewById(R.id.listview1);
+        listview.setAdapter(adapter);
+        //리스트뷰를 클릭할 때 이벤트를 걸어 사용한다.
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // 텍스트뷰에 있는 텍스트를 얻는다.
+                String strText = (String) parent.getItemAtPosition(position);
+
+                // strText 를 사용하여 토스트 알림을 띄운다.
+                Toast.makeText(MainActivity.this, strText, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //각 버튼의 뷰 아이디를 찾아 버튼 객체에 할당한다.
+        button = (Button) findViewById(R.id.button);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+
+//        다른 페이지 버튼을 터치했을때 화면 전환한다.
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                startActivity(intent); //다음화면으로 넘어감
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
+                startActivity(intent); //다음화면으로 넘어감
+                overridePendingTransition(0, 0);
+            }
+        });
+
+    }
 
     @Override
     public void onBackPressed() {
-//        super.onBackPressed();
-                /*backPressCloseHandler.onBackPressed();*/ //뒤로 두번 누르면 종료하기 기능
+
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this); //다이얼로그 내부클래스 빌더 객체 builder 생성
         builder.setTitle("아날로그 엔진 종료"); //다이얼로그의 제목
         builder.setMessage("아날로그 엔진을 종료하시겠습니까?")  //다이얼로그의 내용
@@ -38,63 +101,5 @@ public class MainActivity extends Activity {
                 });
         AlertDialog alert = builder.create(); //빌더 객체의 create 메서드로 다이얼로그 객체를 생성한다.
         alert.show(); //다이얼로그를 보여준다.
-
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) { //
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        button = (Button) findViewById(R.id.button);
-        button2 = (Button) findViewById(R.id.button2);
-        button3 = (Button) findViewById(R.id.button3);
-//        backPressCloseHandler = new BackPressCloseHandler(this);
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                startActivity(intent); //다음화면으로 넘어감
-                overridePendingTransition(0,0);
-            }
-        });
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
-                startActivity(intent); //다음화면으로 넘어감
-                overridePendingTransition(0,0);
-            }
-        });
-
-       /* button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                button.setBackgroundResource(R.drawable.click1);
-                button2.setBackgroundResource(R.drawable.buttonshape2);
-                button3.setBackgroundResource(R.drawable.buttonshape3);
-            }
-        });
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                button2.setBackgroundResource(R.drawable.click2);
-                button.setBackgroundResource(R.drawable.buttonshape);
-                button3.setBackgroundResource(R.drawable.buttonshape3);
-            }
-        });
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                button3.setBackgroundResource(R.drawable.click3);
-                button.setBackgroundResource(R.drawable.buttonshape);
-                button2.setBackgroundResource(R.drawable.buttonshape2);
-            }
-        });*/
-
-
     }
 }
