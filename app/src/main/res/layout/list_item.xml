@@ -11,7 +11,7 @@
         android:layout_height="135dp"
         android:layout_margin="10dp"
         android:layout_weight="1"
-        android:src="@mipmap/facebook" />
+        android:adjustViewBounds="true"/>
 
     <!--텍스트 뷰-->
     <TextView

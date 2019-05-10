@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,14 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
-
-    //    리스트뷰에 표시할 값
-    public String[] LIST_MENU = {
-            "LIST1", "LIST2", "LIST3", "LIST4", "LIST5",
-            "LIST6", "LIST7", "LIST8", "LIST9", "LIST10",
-            "LIST11", "LIST12", "LIST13", "LIST14", "LIST15",
-    };
-
 
     Button button;
     Button button2;
@@ -37,24 +30,39 @@ public class MainActivity extends Activity {
         //activity_main.xml을 화면에 표시해 준다.
         setContentView(R.layout.activity_main);
 
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         //문자열 데이터를 저장하는데 사용할 ArrayList 객체 생성
         List<String[]> list = new ArrayList<>();
 
-        list.add(new String[]{"facebook", "페북 카드"});
-        list.add(new String[]{"", ""});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2016/12/05/AAP1452.png", "MILEAGE PLATINUM"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2016/11/08/AAP1248.png", "삼성카드 4"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2017/10/24/AAP1483_s.png", "삼성카드 taptap O"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2017/12/21/AAP1151_s.png", "American Express® Green"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/05/04/AAP1482_s.png", "삼성카드 taptap S"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/07/23/AAP1562_s.png", "삼성카드 2 V3"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/07/23/AAP1567_s.png", "삼성카드 5 V3"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2019/02/21/AAP1602_s.png", "트레이더스신세계 삼성카드"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/07/23/AAP1565_s.png", "삼성카드 4 V3"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/07/23/AAP1563_s.png", "삼성카드 3 V3 (SK에너지)"});
+        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/05/10/AAP1521_s.png", "삼성 페이 삼성카드 taptap"});
 
         //리스트뷰에 연결하기 위한 어댑터 생성자
-        //ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, LIST_MENU);
-        ArrayAdapter adapter = new ImageAdapter(this, LIST_MENU);
-        //리스트뷰 id를 찾아 리스트뷰 객체 만들어서 어댑터를 할당한다.
+        ArrayAdapter adapter = new ImageAdapter(this, list);
+        //리스트뷰 id를 찾아 리스트뷰 객체 만들어서 어댑터를 할당한다.(원하는 리스트뷰에 list_item을 표시)
         ListView listview = (ListView) findViewById(R.id.listview1);
         listview.setAdapter(adapter);
-        //리스트뷰를 클릭할 때 이벤트를 걸어 사용한다.
+
+        //리스트뷰를 클릭할 때 이벤트
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int a = 0;
+
                 // 텍스트뷰에 있는 텍스트를 얻는다.
-                String strText = (String) parent.getItemAtPosition(position);
+                String[] text = (String[]) parent.getItemAtPosition(position);
+                String strText = text[1];
 
                 // strText 를 사용하여 토스트 알림을 띄운다.
                 Toast.makeText(MainActivity.this, strText, Toast.LENGTH_SHORT).show();
