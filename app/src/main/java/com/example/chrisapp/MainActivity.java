@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
         //activity_main.xml을 화면에 표시해 준다.
         setContentView(R.layout.activity_main);
 
+        //URL로 이미지 가져오기 위해 필수!!
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -58,14 +59,33 @@ public class MainActivity extends Activity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int a = 0;
 
                 // 텍스트뷰에 있는 텍스트를 얻는다.
                 String[] text = (String[]) parent.getItemAtPosition(position);
+                String imgText = text[0];
                 String strText = text[1];
 
                 // strText 를 사용하여 토스트 알림을 띄운다.
                 Toast.makeText(MainActivity.this, strText, Toast.LENGTH_SHORT).show();
+
+                // 상세정보 화면으로 이동하기(인텐트 날리기)
+                // 1. 다음화면을 만든다
+                // 2. AndroidManifest.xml 에 화면을 등록한다
+                // 3. Intent 객체를 생성하여 날린다
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재화면의 제어권자
+                        CardDetailActivity.class); // 다음넘어갈 화면
+
+                // intent 객체에 데이터를 실어서 보내기
+                // 리스트뷰 클릭시 인텐트 (Intent) 생성하고 position 값을 이용하여 인텐트로 넘길값들을 넘긴다
+                intent.putExtra("img", imgText);
+                intent.putExtra("title", strText);
+
+                startActivity(intent); //다음화면으로 넘어감
+
+                //화면 이동시 전환 효과 없앰
+                overridePendingTransition(0, 0);
+
             }
         });
 
@@ -92,6 +112,7 @@ public class MainActivity extends Activity {
                 overridePendingTransition(0, 0);
             }
         });
+
 
     }
 

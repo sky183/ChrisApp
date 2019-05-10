@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@android:color/white"
     android:orientation="horizontal">
 
     <!--이미지 뷰-->
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="90dp"
-        android:layout_height="135dp"
+        android:layout_height="85dp"
         android:layout_margin="10dp"
         android:layout_weight="1"
-        android:adjustViewBounds="true"/>
+        android:adjustViewBounds="true" />
 
     <!--텍스트 뷰-->
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="135dp"
+        android:layout_height="85dp"
         android:layout_margin="10dp"
         android:layout_weight="5"
         android:gravity="center_vertical"
