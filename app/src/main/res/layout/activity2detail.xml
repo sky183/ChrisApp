@@ -73,7 +73,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:fontFamily="serif-monospace"
-                android:text="Sensibility business cards"
+                android:text="Graphic buisiness cards"
                 android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
