@@ -39,17 +39,12 @@ public class MainActivity2 extends Activity {
         //문자열 데이터를 저장하는데 사용할 ArrayList 객체 생성
         List<String[]> list = new ArrayList<>();
 
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2016/12/05/AAP1452.png", "MILEAGE PLATINUM"});
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2016/11/08/AAP1248.png", "삼성카드 4"});
-        list.add(new String[]{"http://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/05/04/AAP1483_s.png", "삼성카드 taptap O"});
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2017/12/21/AAP1151_s.png", "American Express® Green"});
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/05/04/AAP1482_s.png", "삼성카드 taptap S"});
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/07/23/AAP1562_s.png", "삼성카드 2 V3"});
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/07/23/AAP1567_s.png", "삼성카드 5 V3"});
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2019/02/21/AAP1602_s.png", "트레이더스신세계 삼성카드"});
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/07/23/AAP1565_s.png", "삼성카드 4 V3"});
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/07/23/AAP1563_s.png", "삼성카드 3 V3 (SK에너지)"});
-        list.add(new String[]{"https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2018/05/10/AAP1521_s.png", "삼성 페이 삼성카드 taptap"});
+        list.add(new String[]{"", "", "예쁜카드입니다."});
+        list.add(new String[]{"", "", "예쁜카드입니다."});
+        list.add(new String[]{"", "", "예쁜카드입니다."});
+        list.add(new String[]{"", "", "예쁜카드입니다."});
+        list.add(new String[]{"", "", "예쁜카드입니다."});
+        list.add(new String[]{"", "", "예쁜카드입니다."});
 
         //리스트뷰에 연결하기 위한 어댑터 생성자
         ArrayAdapter adapter = new ImageAdapter(this, list);
@@ -66,6 +61,7 @@ public class MainActivity2 extends Activity {
                 String[] text = (String[]) parent.getItemAtPosition(position);
                 String imgText = text[0];
                 String strText = text[1];
+                String contentText = text[2];
 
                 // strText 를 사용하여 토스트 알림을 띄운다.
                 Toast.makeText(MainActivity2.this, strText, Toast.LENGTH_SHORT).show();
@@ -82,6 +78,7 @@ public class MainActivity2 extends Activity {
                 // 리스트뷰 클릭시 인텐트 (Intent) 생성하고 position 값을 이용하여 인텐트로 넘길값들을 넘긴다
                 intent.putExtra("img", imgText);
                 intent.putExtra("title", strText);
+                intent.putExtra("content", contentText);
 
                 startActivity(intent); //다음화면으로 넘어감
 

@@ -51,7 +51,7 @@ public class DetailActivity1 extends Activity {
         }
 
         tvTitle.setText(intent.getStringExtra("title"));
-        tvTitle2.setText(intent.getStringExtra("title2"));
+        tvTitle2.setText(intent.getStringExtra("content"));
 
     } // end of onCreate
 }

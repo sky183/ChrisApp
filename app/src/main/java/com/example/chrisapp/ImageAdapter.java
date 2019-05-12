@@ -65,10 +65,11 @@ public class ImageAdapter extends ArrayAdapter<String> {
 
         //디자인에서 텍스트와 이미지를 가져와 객체로 만들어준다.
         vh.textView = (TextView) convertView.findViewById(R.id.textView1);
+        vh.textView2 = (TextView) convertView.findViewById(R.id.textView2);
 //        ImageView imageView = (ImageView) view.findViewById(R.id.imageView1);
         //가져온 아이템을 넣어준다.
         vh.textView.setText(itemText);
-//        vh.textView2.setText(itemText2);
+        vh.textView2.setText(itemText2);
 
         return convertView;
     }

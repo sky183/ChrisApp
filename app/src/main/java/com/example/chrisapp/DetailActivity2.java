@@ -32,6 +32,7 @@ public class DetailActivity2 extends Activity {
         StrictMode.setThreadPolicy(policy);
 
         TextView tvTitle = (TextView)findViewById(R.id.textView1);
+        TextView tvTitle2 = (TextView)findViewById(R.id.textView2);
         ImageView iv = (ImageView)findViewById(R.id.imageView1);
 
         Intent intent = getIntent(); // 보내온 Intent를 얻는다
@@ -50,6 +51,7 @@ public class DetailActivity2 extends Activity {
         }
 
         tvTitle.setText(intent.getStringExtra("title"));
+        tvTitle2.setText(intent.getStringExtra("content"));
 
     } // end of onCreate
 }
