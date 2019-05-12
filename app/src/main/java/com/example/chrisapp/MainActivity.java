@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,7 +105,6 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
                 startActivity(intent); //다음화면으로 넘어감
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
 
@@ -113,7 +114,6 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
                 startActivity(intent); //다음화면으로 넘어감
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
 
@@ -123,6 +123,8 @@ public class MainActivity extends Activity {
     @Override
     public void onBackPressed() {
 
+        final Activity act = this;
+
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this); //다이얼로그 내부클래스 빌더 객체 builder 생성
         builder.setTitle("아날로그 엔진 종료"); //다이얼로그의 제목
         builder.setMessage("아날로그 엔진을 종료하시겠습니까?")  //다이얼로그의 내용
@@ -130,7 +132,8 @@ public class MainActivity extends Activity {
                 .setPositiveButton("확인", new DialogInterface.OnClickListener() { //확인 버튼 이벤트
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
-                        finish(); //페이지 종료
+                        ActivityCompat.finishAffinity(act);
+//                        finish(); //페이지 종료
 //                        System.exit(0);
                     }
                 })

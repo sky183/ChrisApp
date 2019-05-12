@@ -99,7 +99,6 @@ public class MainActivity3 extends Activity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent); //다음화면으로 넘어감
                 overridePendingTransition(0,0);
-                finish();
             }
         });
 
@@ -109,7 +108,6 @@ public class MainActivity3 extends Activity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
                 startActivity(intent); //다음화면으로 넘어감
                 overridePendingTransition(0,0);
-                finish();
             }
         });
 
