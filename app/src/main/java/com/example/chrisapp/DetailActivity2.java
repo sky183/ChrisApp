@@ -6,6 +6,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +16,10 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class DetailActivity2 extends Activity {
+
+    Button button;
+    Button button2;
+    Button button3;
 
     @Override
     public void onBackPressed() {
@@ -52,6 +58,37 @@ public class DetailActivity2 extends Activity {
 
         tvTitle.setText(intent.getStringExtra("title"));
         tvTitle2.setText(intent.getStringExtra("content"));
+
+        button = (Button) findViewById(R.id.button);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent); //다음화면으로 넘어감
+                overridePendingTransition(0,0);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                startActivity(intent); //다음화면으로 넘어감
+                overridePendingTransition(0,0);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
+                startActivity(intent); //다음화면으로 넘어감
+                overridePendingTransition(0,0);
+            }
+        });
 
     } // end of onCreate
 }
