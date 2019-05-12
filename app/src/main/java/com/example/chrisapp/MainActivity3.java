@@ -40,12 +40,12 @@ public class MainActivity3 extends Activity {
         //문자열 데이터를 저장하는데 사용할 ArrayList 객체 생성
         List<String[]> list = new ArrayList<>();
 
-        list.add(new String[]{"", "", "훌륭한 카드입니다."});
-        list.add(new String[]{"", "", "훌륭한 카드입니다."});
-        list.add(new String[]{"", "", "훌륭한 카드입니다."});
-        list.add(new String[]{"", "", "훌륭한 카드입니다."});
-        list.add(new String[]{"", "", "훌륭한 카드입니다."});
-        list.add(new String[]{"", "", "훌륭한 카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo3/card_deep_pc2.png","신한카드 Deep Dream Platinum+","훌륭한 카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo3/card_theace.png","신한카드 Deep Oil","훌륭한 카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo3/card_deepon.png","신한카드 Deep On Platinum+","훌륭한 카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo3/dream(96dpi)_1.png","신한카드 Deep Dream 체크","훌륭한 카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo3/card_malltail_pc01.png","몰테일 신한카드 체크","훌륭한 카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo3/card(pc)_2.png","FANtastic S 신한카드 체크","훌륭한 카드입니다."});
 
         //리스트뷰에 연결하기 위한 어댑터 생성자
         ArrayAdapter adapter = new ImageAdapter(this, list);
