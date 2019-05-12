@@ -68,6 +68,7 @@ public class ImageAdapter extends ArrayAdapter<String> {
 //        ImageView imageView = (ImageView) view.findViewById(R.id.imageView1);
         //가져온 아이템을 넣어준다.
         vh.textView.setText(itemText);
+        vh.textView2.setText(itemText2);
 
         return convertView;
     }
