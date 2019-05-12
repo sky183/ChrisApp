@@ -73,7 +73,7 @@ public class MainActivity3 extends Activity {
                 // 3. Intent 객체를 생성하여 날린다
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재화면의 제어권자
-                        DetailActivity1.class); // 다음넘어갈 화면
+                        DetailActivity3.class); // 다음넘어갈 화면
 
                 // intent 객체에 데이터를 실어서 보내기
                 // 리스트뷰 클릭시 인텐트 (Intent) 생성하고 position 값을 이용하여 인텐트로 넘길값들을 넘긴다
