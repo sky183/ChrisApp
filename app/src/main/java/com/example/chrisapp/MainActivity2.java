@@ -39,12 +39,12 @@ public class MainActivity2 extends Activity {
         //문자열 데이터를 저장하는데 사용할 ArrayList 객체 생성
         List<String[]> list = new ArrayList<>();
 
-        list.add(new String[]{"", "", "예쁜카드입니다."});
-        list.add(new String[]{"", "", "예쁜카드입니다."});
-        list.add(new String[]{"", "", "예쁜카드입니다."});
-        list.add(new String[]{"", "", "예쁜카드입니다."});
-        list.add(new String[]{"", "", "예쁜카드입니다."});
-        list.add(new String[]{"", "", "예쁜카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo2/img_cardIm01.jpg", "I’m WONDERFUL", "예쁜카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo2/img_cardIm02.jpg", "I'm GREAT", "예쁜카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo2/img_cardIm03.jpg", "I'm CHEERFUL", "예쁜카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo2/img_cardIm04.jpg", "I'm HEARTFUL", "예쁜카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo2/img_cardIm05.jpg", "I'm JOYFUL", "예쁜카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo2/img_cardIm06.jpg", "I'm YOLO", "예쁜카드입니다."});
 
         //리스트뷰에 연결하기 위한 어댑터 생성자
         ArrayAdapter adapter = new ImageAdapter(this, list);
