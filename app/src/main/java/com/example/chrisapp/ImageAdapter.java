@@ -36,6 +36,7 @@ public class ImageAdapter extends ArrayAdapter<String> {
         String[] item = list.get(position);
         String itemUrl = item[0];
         String itemText = item[1];
+        String itemText2 = item[2];
 
         if (convertView == null) {
             //컨텍스트를 가져와 레이아웃을 불러준다.
