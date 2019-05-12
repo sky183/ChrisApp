@@ -15,7 +15,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".MainActivity3" />
-        <activity android:name=".CardDetailActivity" />
+        <activity android:name=".DetailActivity1" />
         <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

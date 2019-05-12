@@ -25,7 +25,7 @@
                 android:id="@+id/button"
                 android:layout_width="95dp"
                 android:layout_height="28dp"
-                android:background="@drawable/click1"
+                android:background="@drawable/buttonshape"
                 android:text="감성명함"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/button2"
@@ -35,7 +35,7 @@
                 android:id="@+id/button2"
                 android:layout_width="95dp"
                 android:layout_height="28dp"
-                android:background="@drawable/buttonshape2"
+                android:background="@drawable/click2"
                 android:text="그래픽명함"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/button3" />
@@ -104,7 +104,6 @@
                 android:layout_margin="10dp"
                 android:layout_weight="5"
                 android:gravity="top"
-                android:text="fgdfgdfg"
                 android:textColor="#000000"
                 android:textSize="16dp" />
 

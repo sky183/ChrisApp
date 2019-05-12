@@ -13,7 +13,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class CardDetailActivity extends Activity {
+public class DetailActivity1 extends Activity {
 
     @Override
     public void onBackPressed() {
@@ -25,7 +25,7 @@ public class CardDetailActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.carddetail);
+        setContentView(R.layout.activity1detail);
 
         //URL로 이미지 가져오기 위해 필수!!
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
