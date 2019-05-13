@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
         //문자열 데이터를 저장하는데 사용할 ArrayList 객체 생성
         List<String[]> list = new ArrayList<>();
 
-        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1452_s.png", "MILEAGE PLATINUM", "멋진카드입니다."});
+/*        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1452_s.png", "MILEAGE PLATINUM", "멋진카드입니다."});
         list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1248.png", "삼성카드 4", "멋진카드입니다."});
         list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1483_s.png", "삼성카드 taptap O", "멋진카드입니다."});
         list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1151_s.png", "American Express® Green", "멋진카드입니다."});
@@ -49,7 +49,19 @@ public class MainActivity extends Activity {
         list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1602_s.png", "트레이더스신세계 삼성카드", "멋진카드입니다."});
         list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1565_s.png", "삼성카드 4 V3", "멋진카드입니다."});
         list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1563_s.png", "삼성카드 3 V3 (SK에너지)", "멋진카드입니다."});
-        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1521_s.png", "삼성 페이 삼성카드 taptap", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.35.115/MyAppServer/photo1/AAP1521_s.png", "삼성 페이 삼성카드 taptap", "멋진카드입니다."});   */
+
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1452_s.png", "MILEAGE PLATINUM", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1248.png", "삼성카드 4", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1483_s.png", "삼성카드 taptap O", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1151_s.png", "American Express® Green", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1482_s.png", "삼성카드 taptap S", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1562_s.png", "삼성카드 2 V3", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1567_s.png", "삼성카드 5 V3", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1602_s.png", "트레이더스신세계 삼성카드", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1565_s.png", "삼성카드 4 V3", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1563_s.png", "삼성카드 3 V3 (SK에너지)", "멋진카드입니다."});
+        list.add(new String[]{"http://192.168.0.56/MyAppServer/photo1/AAP1521_s.png", "삼성 페이 삼성카드 taptap", "멋진카드입니다."});
 
         //리스트뷰에 연결하기 위한 어댑터 생성자
         ArrayAdapter adapter = new ImageAdapter(this, list);
